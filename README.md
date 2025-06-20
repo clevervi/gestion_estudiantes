@@ -1,95 +1,82 @@
-# Student Management
+# Student Management System
 
-## Overview
-A Python-based command-line application for managing student records, grades, and academic statistics. The system provides comprehensive tools for educational administration with data validation and intuitive navigation.
+A Python program for managing student records, including their grades and calculating averages.
 
 ## Features
 
-### Core Functionality
-- **Auto-ID Generation**: Unique student IDs assigned sequentially
-- **Comprehensive Records**: Store names, ages, and multiple grades
-- **Data Validation**: Ensures age (0-120) and grades (0-5) are within valid ranges
-- **Statistical Analysis**: Calculates individual and class-wide averages
+-  Register new students with auto-generated IDs
+-  Consult complete student information
+-  Update student grades (add, modify, delete)
+-  Delete student records
+-  List all students with individual and general averages
+-  Data validation for ages (0-120) and grades (0-5)
 
-### Operational Modules
-1. **Student Registration**
-   - Collects name, validated age
-   - Requires minimum 3 grades (0-5 scale)
-   - Optional additional grade entry
+## Requirements
 
-2. **Student Consultation**
-   - Displays complete student profiles
-   - Shows calculated grade average
-   - Brief listing available before consultation
+- Python 3.x
 
-3. **Grade Management**
-   - Add new grades
-   - Modify existing grades by index
-   - Delete specific grades
-   - Real-time grade updates
+## Installation
 
-4. **Student Deletion**
-   - Remove students by ID
-   - Confirmation with student name
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/clevervi/gestion_estudiantes.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd student-management-system
+   ```
 
-5. **Reporting**
-   - Detailed student listings with statistics
-   - General average calculation
-   - Formatted output display
+## Usage
 
-## Data Structure
-```python
-{
-    "student_id": {
-        "name": "Student Full Name",
-        "age": 20,  # Validated integer (0-120)
-        "grades": [4.5, 3.2, 4.8]  # Minimum 3, validated (0-5)
-    }
-}
-```
-
-## Usage Instructions
-
-### Launching the Application
+Run the program with Python:
 ```bash
 python gestion_estudiantes.py
 ```
 
-### Navigation Guide
-| Option | Functionality                      |
-|--------|------------------------------------|
-| 1      | Register new student               |
-| 2      | Consult student details            |
-| 3      | Update student grades              |
-| 4      | Delete student record              |
-| 5      | Generate complete student report   |
-| 6      | Exit the application               |
+The program will:
+1. First ask you to register 3 students (initial setup)
+2. Then display a menu with the following options:
 
-### Input Requirements
-- **Names**: Free text input
-- **Ages**: Integers between 0-120
-- **Grades**: Numbers between 0-5 (minimum 3 required)
-- **Menu Selections**: Numbers 1-6
+```
+--- Student Management System ---
+1. Register student
+2. Consult student
+3. Update grades
+4. Delete student
+5. List all students
+6. Exit
+```
 
-## Technical Specifications
-- **Language**: Python 3.x
-- **Dependencies**: None (standard library only)
-- **Data Persistence**: Runtime only (no database)
-- **Validation**: Comprehensive input checking
+## Data Structure
 
-## Best Practices
-1. Register students with complete grade sets
-2. Verify data accuracy during consultation
-3. Maintain minimum grade requirements
-4. Review averages before making academic decisions
+The program uses a dictionary to store student records with the following structure:
+```python
+{
+    'student_id': {
+        'name': str,
+        'age': int,
+        'grades': [float]
+    }
+}
+```
 
-## Limitations
-- No data persistence between sessions
-- Single-user operation
-- No export functionality
+## Example Usage
 
-## Future Enhancements
-- Database integration for persistence
-- Additional statistical calculations
-- Export capabilities (CSV, PDF)
-- Graphical user interface
+1. When starting, you'll be prompted to register 3 students:
+   ```
+   --- Initial Setup ---
+   Please register 3 students to begin:
+   
+   Registering student 1 of 3:
+   --- Student Registration ---
+   Assigned Student ID: 1
+   Full name: John Doe
+   Age (0-120): 20
+   Enter at least 3 student grades (0-5):
+   Grade 1: 4.5
+   Grade 2: 3.8
+   Grade 3: 4.2
+   Add another grade? (y/n): n
+   ```
+
+2. After registration, you can use the menu to manage records.
