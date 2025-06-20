@@ -1,5 +1,6 @@
-# Student Management System
+# Student Management
 # This program allows managing student records including their grades and calculating averages.
+# Modified version that requires registering 3 students at program start
 
 # Main dictionary to store students
 # Structure: {student_id: {'name': str, 'age': int, 'grades': [float]}}
@@ -8,11 +9,19 @@ next_id = 1  # Auto-incremented ID counter for new students
 
 def main():
     """
-    Main function that displays the menu and manages user selections.
+    Main function that first requires registering 3 students,
+    then displays the menu and manages user selections.
     Continuously runs until the user chooses to exit.
     """
-    running = True  # Flag to control the main loop
+    # Require 3 initial student registrations
+    print("\n--- Initial Setup ---")
+    print("Please register 3 students to begin:")
+    for i in range(3):
+        print(f"\nRegistering student {i+1} of 3:")
+        register_student()
     
+    # Main program loop
+    running = True
     while running:
         print("\n--- Student Management System ---")
         print("1. Register student")
