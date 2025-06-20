@@ -1,5 +1,4 @@
-```markdown
-# Student Management System
+# Student Management
 
 ## Overview
 A Python-based command-line application for managing student records, grades, and academic statistics. The system provides comprehensive tools for educational administration with data validation and intuitive navigation.
@@ -94,11 +93,3 @@ python gestion_estudiantes.py
 - Additional statistical calculations
 - Export capabilities (CSV, PDF)
 - Graphical user interface
-```
-
-This README provides:
-1. Clear feature documentation
-2. Technical specifications
-3. Usage instructions
-4. Data structure explanation
-5. Future improvement roadmap
